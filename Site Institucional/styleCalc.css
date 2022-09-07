@@ -1,0 +1,24 @@
+* {
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(70, 70, 188);
+    color: white;
+}
+
+#caixas {
+    background-color: gray;
+    width: 10%;
+}
+
+#preco {
+    background-color: gray;
+    width: 10%;
+}
+
+button {
+    background-color: gray;
+    width: 7%;
+    border-radius: 20%;
+}
