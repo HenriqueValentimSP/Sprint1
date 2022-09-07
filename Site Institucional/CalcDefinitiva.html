@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+</head>
+<body>
+
+        Quantas caixas de medicamentos são compradas por mês?
+        <br>
+        <input id="caixas">        
+        <br><br>
+
+        Qual é o valor dessas caixas?
+        <br>
+        <input id="preco">        
+        <br><br>
+
+        <button onclick="calcular()">Ver prejuízo</button>
+        <br><br>
+
+        <div id="output"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+
+        var qtd = Number(caixas.value);
+        var valor = Number(preco.value);
+
+        var gasto = qtd * valor;
+
+        var trimestre = gasto * 3;
+        var semestre = gasto * 6;
+        var ano = gasto * 12;
+        
+        var porcentagem = gasto - (gasto * 0.22);
+        var porcentagem3 = trimestre - (trimestre * 0.22); 
+        var porcentagem6 = semestre - (semestre * 0.22);
+        var porcentagem12 = ano - (ano * 0.22);
+
+
+        output.innerHTML = `Você sabia que o Sistema Unico de Saúde desperdiça 16 milhões de reais por ano em medicamentos por má gestão e armazenamento? <br>`;
+
+        output.innerHTML += `Esse valor corresponde a somente 0.22% de todo o gasto com os medicamentos, porém os medicamentos perdidos são de alto custo e por tal razão eles devem ser evitados a todo custo <br>`;
+        
+        output.innerHTML += `Veja aqui seus gastos e perdas <br><br>`;
+
+        output.innerHTML += `Gasto mensal : ${gasto}<br>
+        Gasto trimestral: R$ ${trimestre} <br>
+        Gasto semestral: R$ ${semestre} <br>
+        Gasto anual: R$ ${ano} <br><br>`;
+
+        output.innerHTML += `Perda mensal : R$ ${porcentagem} <br>
+        Perda trimestral : R$ ${porcentagem3} <br>
+        Perda semestral : R$ ${porcentagem6} <br>
+        Perda anual : R$ ${porcentagem12} <br>`;
+    }
+
+</script>
